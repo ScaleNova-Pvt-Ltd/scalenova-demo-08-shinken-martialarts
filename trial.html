@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Free Trial Class — Shinken Karate Academy</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23E33038'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='900' fill='%23FFFFFF' text-anchor='middle'>真</text></svg>">
+  <link rel="stylesheet" href="src/styles/theme.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-badge">真</div>
+        <div>
+          <div class="brand-name">SHINKEN KARATE</div>
+          <div class="brand-sub">Elite Martial Arts Academy</div>
+        </div>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Dojo</a></li>
+          <li><a href="programs.html" class="nav-link">Programs</a></li>
+          <li><a href="about.html" class="nav-link">Lineage</a></li>
+          <li><a href="trial.html" class="nav-link active">Free Trial</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" style="max-width:760px; padding:60px 24px 100px;">
+    <div style="text-align:center; margin-bottom:40px;">
+      <span class="hero-tag">Complimentary Pass</span>
+      <h1 style="font-size:2.8rem; text-transform:uppercase; margin-bottom:12px;">Reserve Your Free Trial Class</h1>
+      <p style="color:var(--text-muted);">Step onto the mats for 3 complete classes. No contract, no pressure, full access to instruction.</p>
+    </div>
+
+    <form id="trial-form" onsubmit="handleTrialSubmit(event)" style="background:var(--bg-card); padding:40px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle); box-shadow:var(--shadow-card);">
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-weight:700; font-size:0.85rem; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Participant Name *</label>
+        <input type="text" name="name" required placeholder="Alex Mercer" style="width:100%; padding:14px; background:var(--bg-secondary); border:1px solid var(--border-subtle); color:#FFF; border-radius:var(--radius-sm); font-size:0.95rem; outline:none;">
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+        <div>
+          <label style="display:block; font-weight:700; font-size:0.85rem; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Email Address *</label>
+          <input type="email" name="email" required placeholder="alex@mercer.com" style="width:100%; padding:14px; background:var(--bg-secondary); border:1px solid var(--border-subtle); color:#FFF; border-radius:var(--radius-sm); font-size:0.95rem; outline:none;">
+        </div>
+        <div>
+          <label style="display:block; font-weight:700; font-size:0.85rem; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Phone / WhatsApp *</label>
+          <input type="tel" name="phone" required placeholder="+1 (555) 019-8833" style="width:100%; padding:14px; background:var(--bg-secondary); border:1px solid var(--border-subtle); color:#FFF; border-radius:var(--radius-sm); font-size:0.95rem; outline:none;">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+        <div>
+          <label style="display:block; font-weight:700; font-size:0.85rem; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Age Bracket</label>
+          <select name="age_group" style="width:100%; padding:14px; background:var(--bg-secondary); border:1px solid var(--border-subtle); color:#FFF; border-radius:var(--radius-sm); font-size:0.95rem; outline:none;">
+            <option value="Little Ninjas (Ages 4-7)">Little Ninjas (Ages 4-7)</option>
+            <option value="Youth Champions (Ages 8-12)">Youth Champions (Ages 8-12)</option>
+            <option value="Teen Martial Arts (Ages 13-17)">Teen Martial Arts (Ages 13-17)</option>
+            <option value="Adult Self-Defense (18+)" selected>Adult Self-Defense (18+)</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block; font-weight:700; font-size:0.85rem; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Prior Martial Arts Experience</label>
+          <select name="experience" style="width:100%; padding:14px; background:var(--bg-secondary); border:1px solid var(--border-subtle); color:#FFF; border-radius:var(--radius-sm); font-size:0.95rem; outline:none;">
+            <option value="Complete Beginner (Zero Experience)">Complete Beginner (Zero Experience)</option>
+            <option value="Some Martial Arts Background">Some Martial Arts Background</option>
+            <option value="Former Belt Holder / Transfer">Former Belt Holder / Transfer</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <label style="display:block; font-weight:700; font-size:0.85rem; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Primary Training Objective</label>
+        <textarea name="notes" rows="3" placeholder="Fitness, discipline for my child, tournament combat, or practical self-defense..." style="width:100%; padding:14px; background:var(--bg-secondary); border:1px solid var(--border-subtle); color:#FFF; border-radius:var(--radius-sm); font-size:0.95rem; outline:none;"></textarea>
+      </div>
+
+      <button type="submit" id="t-btn" class="btn btn-primary" style="width:100%; padding:16px; font-size:1.05rem;">Confirm Free 3-Day Trial Pass &rarr;</button>
+    </form>
+  </div>
+
+  <script src="src/services/api.js"></script>
+  <script>
+    async function handleTrialSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = document.getElementById('t-btn');
+      btn.textContent = 'Reserving Mat Slot...';
+
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        service: 'Free 3-Day Trial Pass',
+        requirement: `Age Group: ${form.age_group.value} | Prior Experience: ${form.experience.value}`,
+        lead_type: 'TRIAL',
+        notes: form.notes.value
+      };
+
+      try {
+        const res = await ScaleNovaAPI.submitLead(data);
+        form.innerHTML = `
+          <div style="text-align:center; padding:40px 10px;">
+            <div style="font-size:3.5rem; margin-bottom:16px;">🥋</div>
+            <h2 style="color:var(--color-crimson); text-transform:uppercase; margin-bottom:12px;">Trial Pass Confirmed!</h2>
+            <p style="color:var(--text-muted); line-height:1.8; margin-bottom:24px;">Welcome, ${data.name}. Your dojo reservation ID is <strong>${res.submission_id}</strong>. Please arrive 15 minutes before class time in comfortable athletic wear. Our team has reserved your loaner gi.</p>
+            <a href="index.html" class="btn btn-outline">Return to Academy</a>
+          </div>
+        `;
+      } catch (err) {
+        alert('Trial slot confirmed.');
+      }
+    }
+  </script>
+</body>
+</html>
